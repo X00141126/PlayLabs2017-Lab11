@@ -1,0 +1,12 @@
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/WMDD1Lab8CRUD/app/models/Customer.java:33:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable lastName[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class models.Customer[0m
+[0m[[0m[31merror[0m] [0m[0m        lastName = ln;[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/WMDD1Lab8CRUD/app/models/Customer.java:54:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable lastName[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class models.Customer[0m
+[0m[[0m[31merror[0m] [0m[0m        return lastName;[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/WMDD1Lab8CRUD/app/models/Customer.java:74:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable lastName[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class models.Customer[0m
+[0m[[0m[31merror[0m] [0m[0m        lastName = ln;[0m
