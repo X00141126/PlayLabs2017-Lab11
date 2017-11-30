@@ -25,3 +25,4 @@ insert into product (id,name,description,stock,price) values ( 10,'Oven','Oven +
 insert into product (id,name,description,stock,price) values ( 11,'Bed','Super King size,super comfort mattress',5,899.00 );
 
 insert into product (id,name,description,stock,price) values ( 12,'Learning JavaScript','Become a JavaScript expert in 2 hours!',50,29.00 );
+

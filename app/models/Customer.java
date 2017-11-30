@@ -13,10 +13,10 @@ public class Customer{
     private long id;
 
     @Constraints.Required
-    private String firstName;
+    private String first_Name;
 
     @Constraints.Required
-    private String lastName;
+    private String last_Name;
 
     @Constraints.Required
     private String phone;
@@ -29,8 +29,8 @@ public class Customer{
 
     public Customer(long id, String fn, String ln, String p, String em) {
         this.id = id;
-        firstName = fn;
-        lastName = ln;
+        first_Name = fn;
+        last_Name = ln;
         phone = p;
         email = em;
     }
@@ -47,11 +47,11 @@ public class Customer{
     }
 
     public String getFirstName() {
-        return firstName;
+        return first_Name;
     }
 
     public String getLastName(){
-        return lastName;
+        return last_Name;
     }
 
     public String getPhone(){
@@ -67,11 +67,11 @@ public class Customer{
     }
 
     public void setFirstName(String fn) {
-        firstName = fn;
+        first_Name = fn;
     }
 
     public void setLastName(String ln) {
-        lastName = ln;
+        last_Name = ln;
     }
 
     public void setPhone(String p) {
