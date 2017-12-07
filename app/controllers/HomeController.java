@@ -19,6 +19,12 @@ import views.html.*;
  */
 public class HomeController extends Controller {
 
+    private FormFactory FormFactory;
+
+    @Inject
+    public HomeController(FormFactory f) {
+        this.formFactory = f;
+    }
     /**
      * An action that renders an HTML page with a welcome message.
      * The configuration in the <code>routes</code> file means that
@@ -33,6 +39,11 @@ public class HomeController extends Controller {
     public Result customers() {
         List<Customer> customerList = Customer.findAll();
         return ok(customers.render(customerList));
+    }
+
+    public Result addProduct() {
+        Form<Product> productForm = formFactory.form(Product.class);
+        return ok(addProduct.render(productForm));
     }
 
 }
