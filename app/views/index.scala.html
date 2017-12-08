@@ -5,7 +5,11 @@
 <p class="lead">Product Catalogue</p>
 
 <table class="table table-bordered table-hover table-condensed">
-
+  @if(flash.containsKey("success")) {
+    <div class="alert alert-success">
+      @flash.get("success")
+    </div>
+  }
   <thead>
     <tr>
       <th>ID</th>
