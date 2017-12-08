@@ -8,7 +8,7 @@ import play.data.format.*;
 import play.data.validation.*;
 
 @Entity
-public class Customer{
+public class Customer extends Model{
     @Id
     private long id;
 
@@ -46,12 +46,24 @@ public class Customer{
         return id;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getFirstName() {
         return first_Name;
     }
 
     public String getLastName(){
         return last_Name;
+    }
+
+    public String getLast_Name() {
+        return last_Name;
+    }
+
+    public String getFirst_Name() {
+        return first_Name;
     }
 
     public String getPhone(){
@@ -68,6 +80,14 @@ public class Customer{
 
     public void setFirstName(String fn) {
         first_Name = fn;
+    }
+    
+    public void setFirst_Name(String fn) {
+        first_Name = fn;
+    }
+
+    public void setLast_Name(String ln) {
+        last_Name = ln;
     }
 
     public void setLastName(String ln) {

@@ -4,6 +4,12 @@
 
 <p class="lead">Our Customers</p>
 
+@if(flash.containsKey("success")) {
+  <div class="alert alert-success">
+    @flash.get("success")
+  </div>
+}
+
 <table class="table table-bordered table-hover table-condensed">
 
   <thead>
@@ -13,6 +19,7 @@
       <th>Last Name</th>
       <th>Phone</th>
       <th>Email</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -24,10 +31,21 @@
         <td>@c.getLastName</td>
         <td>@c.getPhone</td>
         <td>@c.getEmail</td>
+        <td>
+          <a href="@routes.HomeController.deleteCustomer(c.getId)" class="button-xs btn-danger"  onclick="return confirmDel()">
+            <span class="glyphicon glyphicon-trash"></span>
+          </a>
+        </td>
       </tr>
     }
   </tbody>
 
 </table>
+
+<p>
+  <a href="@routes.HomeController.addCustomer()">
+    <button class="btn btn-primary">Add a Customer</button>
+  </a>
+</p>
 
 }

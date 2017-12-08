@@ -4,7 +4,7 @@
 		module="playlabs2017-crud1-2-3-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171208124140"
+		publication="20171208151529"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

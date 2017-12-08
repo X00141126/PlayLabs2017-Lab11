@@ -17,6 +17,7 @@
       <th>Description</th>
       <th>Stock</th>
       <th>Price</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -28,6 +29,11 @@
         <td>@p.getDescription</td>
         <td  class="numeric">@p.getStock</td>
         <td  class="numeric">€ @("%.2f".format(p.getPrice))</td>
+        <td>
+          <a href="@routes.HomeController.deleteProduct(p.getId)" class="button xs btn-danger" onclick="return confirmDel();">
+            <span class="glyphicon glyphicon-trash"></span>
+          </a>
+        </td>
       </tr>
     }
   </tbody>

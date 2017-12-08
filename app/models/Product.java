@@ -58,7 +58,7 @@ public static final List<Product> findAll() {
 
 public Long getId() {
 
-return id;
+return this.id;
 
 }
 

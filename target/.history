@@ -26,3 +26,8 @@ run
 clean
 run
 clean
+run
+clean-all
+clean
+run
+clean

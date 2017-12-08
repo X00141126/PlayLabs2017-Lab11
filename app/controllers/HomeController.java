@@ -25,12 +25,7 @@ public class HomeController extends Controller {
     public HomeController(FormFactory f) {
         this.formFactory = f;
     }
-    /**
-     * An action that renders an HTML page with a welcome message.
-     * The configuration in the <code>routes</code> file means that
-     * this method will be called when the application receives a
-     * <code>GET</code> request with a path of <code>/</code>.
-     */
+    
     public Result index() {
         List<Product> productList = Product.findAll();
         return ok(index.render(productList));
@@ -62,5 +57,44 @@ public class HomeController extends Controller {
 
         return redirect(controllers.routes.HomeController.index());
     }
+
+    public Result deleteProduct(Long id) {
+        Product.find.ref(id).delete();
+
+        flash("success", "Product has been deleted");
+        
+        return redirect(routes.HomeController.index());
+    }
+
+    public Result addCustomer() {
+        Form<Customer> customerForm = formFactory.form(Customer.class);
+        return ok(addCustomer.render(customerForm));
+    }
+
+    public Result addCustomerSubmit() {
+        Form<Customer> newCustomerForm = formFactory.form(Customer.class).bindFromRequest();
+
+        if (newCustomerForm.hasErrors()) {
+            return badRequest(addCustomer.render(newCustomerForm));
+        } 
+        else {
+            Customer newCustomer = newCustomerForm.get();
+
+            newCustomer.save();
+
+            flash("success", "Customer " + newCustomer.getFirstName() + " " + newCustomer.getLastName() + " was added");
+
+            return redirect(controllers.routes.HomeController.customers());
+        }
+    }
+
+    public Result deleteCustomer(Long id) {
+        Customer.find.ref(id).delete();
+        flash("success", "Customer has been deleted");
+
+        return redirect(routes.HomeController.customers());
+    }
+
+    
 
 }
