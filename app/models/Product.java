@@ -17,6 +17,9 @@ private Long id;
 @Constraints.Required
 private String name;
 
+@ManyToOne
+private Category category;
+
 @Constraints.Required
 private String description;
 
@@ -78,6 +81,14 @@ public void setName(String name) {
 
 this.name = name;
 
+}
+
+public Category getCategory() {
+    return category;
+}
+
+public void setCategory(Category c) {
+    this.category = c;
 }
 
 public String getDescription() {
