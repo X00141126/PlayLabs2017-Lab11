@@ -10,7 +10,7 @@ import play.data.validation.*;
 @Entity
 public class Customer extends Model{
     @Id
-    private long id;
+    private Long id;
 
     @Constraints.Required
     private String first_Name;
@@ -27,12 +27,12 @@ public class Customer extends Model{
     public Customer() {
     }
 
-    public Customer(long id, String fn, String ln, String p, String em) {
+    public Customer(Long id, String fn, String ln, String p, String em) {
         this.id = id;
-        first_Name = fn;
-        last_Name = ln;
-        phone = p;
-        email = em;
+        this.first_Name = fn;
+        this.last_Name = ln;
+        this.phone = p;
+        this.email = em;
     }
 
 
@@ -42,12 +42,8 @@ public class Customer extends Model{
         return Customer.find.all();
     }
 
-    public long getID() {
-        return id;
-    }
-
-    public long getId() {
-        return id;
+    public Long getID() {
+        return this.id;
     }
 
     public String getFirstName() {
@@ -74,7 +70,7 @@ public class Customer extends Model{
         return email;
     }
 
-    public void setID(long id) {
+    public void setID(Long id) {
         this.id = id;
     }
 
