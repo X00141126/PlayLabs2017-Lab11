@@ -13,13 +13,8 @@ public class Customer extends Model{
     private Long id;
 
     @Constraints.Required
-    private String first_Name;
+    private String name;
 
-    @Constraints.Required
-    private String last_Name;
-
-    @Constraints.Required
-    private String phone;
 
     @Constraints.Required
     private String email;
@@ -27,11 +22,9 @@ public class Customer extends Model{
     public Customer() {
     }
 
-    public Customer(Long id, String fn, String ln, String p, String em) {
+    public Customer(Long id, String name, String em) {
         this.id = id;
-        this.first_Name = fn;
-        this.last_Name = ln;
-        this.phone = p;
+        this.name = name;
         this.email = em;
     }
 
@@ -42,59 +35,28 @@ public class Customer extends Model{
         return Customer.find.all();
     }
 
-    public Long getID() {
+    public Long getId() {
         return this.id;
     }
 
-    public String getFirstName() {
-        return first_Name;
+    public String getName() {
+        return this.name;
     }
-
-    public String getLastName(){
-        return last_Name;
-    }
-
-    public String getLast_Name() {
-        return last_Name;
-    }
-
-    public String getFirst_Name() {
-        return first_Name;
-    }
-
-    public String getPhone(){
-        return phone;
-    }
-
+    
     public String getEmail(){
-        return email;
+        return this.email;
     }
 
-    public void setID(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public void setFirstName(String fn) {
-        first_Name = fn;
+    public void setName(String name) {
+        this.name = name;
     }
     
-    public void setFirst_Name(String fn) {
-        first_Name = fn;
-    }
-
-    public void setLast_Name(String ln) {
-        last_Name = ln;
-    }
-
-    public void setLastName(String ln) {
-        last_Name = ln;
-    }
-
-    public void setPhone(String p) {
-        phone = p;
-    }
 
     public void setEmail(String e) {
-        email = e;
+        this.email = e;
     }
 }

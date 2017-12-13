@@ -15,9 +15,7 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Phone</th>
+      <th>Name</th>
       <th>Email</th>
       <th colspan="2"></th>      
     </tr>
@@ -26,17 +24,16 @@
   <tbody>
     @for(c<-customers) {
       <tr>
-        <td class="numeric">@c.getID</td>
-        <td>@c.getFirstName</td>
-        <td>@c.getLastName</td>
-        <td>@c.getPhone</td>
+        <td class="numeric">@c.getId</td>
+        <td>@c.getName</td>
         <td>@c.getEmail</td>
         <td>
-          <a href="@routes.HomeController.updateCustomer(c.getID)" class="button-xs btn-danger">
+          <a href="@routes.HomeController.updateCustomer(c.getId)" class="button-xs btn-danger">
             <span class="glyphicon glyphicon-pencil"></span>
           </a>
-        </td>        <td>
-          <a href="@routes.HomeController.deleteCustomer(c.getID)" class="button-xs btn-danger"  onclick="return confirmDel()">
+        </td>        
+        <td>
+          <a href="@routes.HomeController.deleteCustomer(c.getId)" class="button-xs btn-danger"  onclick="return confirmDel()">
             <span class="glyphicon glyphicon-trash"></span>
           </a>
         </td>

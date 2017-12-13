@@ -6,16 +6,14 @@
     @form(action=routes.HomeController.addCustomerSubmit(), 'class-> "form-horizontal", 'role -> "form") {
         @CSRF.formField
 
-        @inputText(customerForm("first_Name"), '_label -> "First Name", 'class -> "form_control")
-        @inputText(customerForm("last_Name"), '_label -> "Last Name", 'class -> "form_control")
-        @inputText(customerForm("phone"), '_label -> "Phone", 'class -> "form_control")
+        @inputText(customerForm("name"), '_label -> "Name", 'class -> "form_control")
         @inputText(customerForm("email"), '_label -> "E-mail", 'class -> "form_control")
 
         @inputText(customerForm("id"), '_label -> "", 'hidden -> "hidden")
 
         <div class="actions">
             <input type="submit" value="Add/Update Customer" class="btn btn-primary">
-            <a href="@routes.HomeController.customers">
+            <a href="@routes.HomeController.customer">
                 <button type="button" class="btn btn-warning">Cancel</button>
             </a>
         </div>

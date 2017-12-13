@@ -23,7 +23,7 @@
 
             <ul class="nav navbar-nav">
 
-                <li class="active">
+                <li @if(title=="Products" ){class="active"}>
                     <a href="#">About</a>
                 </li>
 
@@ -35,8 +35,8 @@
                     <a href="#">Contact</a>
                 </li>
 
-                <li>
-                    <a href="@routes.HomeController.customers()">Customers</a>
+                <li @if(title=="Customers"){class="active"}>
+                    <a href="@routes.HomeController.customer()">Customers</a>
                 </li>
             </ul>
 

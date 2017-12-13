@@ -13,10 +13,6 @@ import javax.inject.Inject;
 import models.*;
 import views.html.*;
 
-/**
- * This controller contains an action to handle HTTP requests
- * to the application's home page.
- */
 public class HomeController extends Controller {
 
     private FormFactory formFactory;
@@ -31,9 +27,9 @@ public class HomeController extends Controller {
         return ok(index.render(productList));
     }
 
-    public Result customers() {
+    public Result customer() {
         List<Customer> customerList = Customer.findAll();
-        return ok(customers.render(customerList));
+        return ok(customer.render(customerList));
     }
 
     public Result addProduct() {
@@ -80,26 +76,28 @@ public class HomeController extends Controller {
 
     public Result addCustomerSubmit() {
         Form<Customer> newCustomerForm = formFactory.form(Customer.class).bindFromRequest();
+        
 
         if (newCustomerForm.hasErrors()) {
             return badRequest(addCustomer.render(newCustomerForm));
+            
         } 
         else {
             Customer newCustomer = newCustomerForm.get();
-
-            if (newCustomer.getID() == null) {
+            
+            if (newCustomer.getId() == null) {
                 newCustomer.save();
-                flash("success", "Customer " + newCustomer.getFirstName() + " " + newCustomer.getLastName() + " was added");                
+                flash("success", "Customer " + newCustomer.getName() + " was added");                
             }
 
-            else if (newCustomer.getID() != null) {
+            else {
                 newCustomer.update();
-                flash("success", "Customer " + newCustomer.getFirstName() + " " + newCustomer.getLastName() + " was updated");                
+                flash("success", "Customer " + newCustomer.getName() + " was updated");                
             }
 
 
 
-            return redirect(controllers.routes.HomeController.customers());
+            return redirect(controllers.routes.HomeController.customer());
         }
     }
 
@@ -107,7 +105,7 @@ public class HomeController extends Controller {
         Customer.find.ref(id).delete();
         flash("success", "Customer has been deleted");
 
-        return redirect(routes.HomeController.customers());
+        return redirect(routes.HomeController.customer());
     }
 
     @Transactional
@@ -126,8 +124,7 @@ public class HomeController extends Controller {
     }
 
     @Transactional
-    public Result updateCustomer(Long id) {
-        
+    public Result updateCustomer(Long id) {        
         Customer c;
         Form<Customer> customerForm;
 

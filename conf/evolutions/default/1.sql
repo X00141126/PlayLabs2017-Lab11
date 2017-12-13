@@ -5,9 +5,7 @@
 
 create table customer (
   id                            bigint auto_increment not null,
-  first_name                    varchar(255),
-  last_name                     varchar(255),
-  phone                         varchar(255),
+  name                          varchar(255),
   email                         varchar(255),
   constraint pk_customer primary key (id)
 );
