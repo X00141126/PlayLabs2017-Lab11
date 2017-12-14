@@ -23,7 +23,7 @@ public class HomeController extends Controller {
     }
     
     public Result index(Long cat) {
-        List<Product> productList = Product.findAll();
+        List<Product> productList = null;
         List<Category> categoryList = Category.findAll();
         if (cat == 0) {
             productList = Product.findAll();

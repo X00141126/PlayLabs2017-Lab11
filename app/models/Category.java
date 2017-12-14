@@ -57,4 +57,14 @@ public class Category extends Model {
         return Category.find.query().where().orderBy("name asc").findList();
     }
 
+    public static Map<String, String> options() {
+        LinkedHashMap<String, String> options = new LinkedHashMap();
+
+        for (Category c: Category.findAll()) {
+            options.put(c.getId().toString(), c.getName());
+        }
+        
+        return options;
+    }
+
 }

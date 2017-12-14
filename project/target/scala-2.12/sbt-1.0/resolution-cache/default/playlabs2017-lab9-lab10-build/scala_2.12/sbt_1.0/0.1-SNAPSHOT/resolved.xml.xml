@@ -4,7 +4,7 @@
 		module="playlabs2017-lab9-lab10-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171213135246"
+		publication="20171214112316"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>
