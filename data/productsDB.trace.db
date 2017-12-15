@@ -493,3 +493,6 @@ insert into customer (id, name, email) values (2, 'Pernel Mariah', '12345', 'The
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2017-12-15 14:19:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMER" not found; SQL statement:
+insert into customer (id, name, email) values (2, 'Baldric Eunice', 'baldric@gmail.com') [42102-193]

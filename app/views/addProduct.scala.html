@@ -1,7 +1,7 @@
-@(productForm: Form[models.Product])
+@(productForm: Form[models.Product], user: models.users.User)
 @import helper._
 
-@main("Add Product") {
+@main("Add Product", user) {
     <p class="lead">Add a new product</p>
     @form(action=routes.HomeController.addProductSubmit(), 'class -> "form-horizontal", 'role -> "form") {
         @* CSRF attack prevention *@

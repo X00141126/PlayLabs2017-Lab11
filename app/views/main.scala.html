@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String, user: models.users.User)(content: Html)
 
 <!DOCTYPE html>
 
@@ -34,9 +34,13 @@
                 <li>
                     <a href="#">Contact</a>
                 </li>
+                <li @if(title=="Login"){class="active"}>
+                    @if(user != null) {
+                        <a href="@routes.LoginController.logout()">Logout @user.getName()</a>
+                    } else {
+                        <a href="@routes.LoginController.login()">Login</a>
+                    }
 
-                <li @if(title=="Customers"){class="active"}>
-                    <a href="@routes.HomeController.customer()">Customers</a>
                 </li>
             </ul>
 
@@ -51,16 +55,18 @@
             </div>
         </row>
     </container>
-
+<br>
     <container>
+        <footer>
         <row>
             <div class="col-md-12">
                 Copyright
                 <strong>Online Shop</strong>
             </div>
         </row>
+    </footer>
     </container>
-    <script src="@routes.Assets.versioned("javascripts/main.js")"></script>"
+    <script src="@routes.Assets.versioned("javascripts/main.js")"></script>
 </body>
 
 </html>

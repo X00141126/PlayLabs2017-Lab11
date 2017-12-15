@@ -1,6 +1,6 @@
-@(products: List[models.Product], categories: List[models.Category])
+@(products: List[models.Product], categories: List[models.Category], user: models.users.User)
 
-@main("Products") {
+@main("Products", user) {
 
 <p class="lead">Product Catalogue</p>
 <br>
