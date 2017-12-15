@@ -35,7 +35,8 @@ public class HomeController extends Controller {
         return ok(index.render(productList, categoryList, User.getUserById(session().get("email"))));
     }
 
-    
+    @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
     public Result addProduct() {
         Form<Product> productForm = formFactory.form(Product.class);
         return ok(addProduct.render(productForm, User.getUserById(session().get("email"))));
@@ -66,6 +67,7 @@ public class HomeController extends Controller {
     }
 
     @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
     @Transactional
     public Result deleteProduct(Long id) {
         Product.find.ref(id).delete();
@@ -75,6 +77,8 @@ public class HomeController extends Controller {
         return redirect(routes.HomeController.index(0));
     }
 
+    @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
     @Transactional
     public Result updateProduct(Long id) {
         Product p;

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#
 
 # A library to simplify using the SBT launcher from other packages.
 # Note: This should be used by tools like giter8/conscript etc.

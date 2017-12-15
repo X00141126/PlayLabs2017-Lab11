@@ -1,3 +1,3 @@
-@REM SBT launcher script
+@REM SBT launcher scriptt
 
 .\sbt-dist\bin\sbt.bat %*
