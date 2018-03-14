@@ -31,7 +31,10 @@
           <th>Description</th>
           <th>Stock</th>
           <th>Price</th>
-          <th colspan="2"></th>      
+          @if(user != null && user.getRole == "admin") {
+            <th colspan="2"></th>      
+          }
+
         </tr>
       </thead>
 
@@ -44,7 +47,8 @@
             <td>@p.getDescription</td>
             <td  class="numeric">@p.getStock</td>
             <td  class="numeric">€ @("%.2f".format(p.getPrice))</td>
-            <td>
+            @if(user != null && user.getRole == "admin") {
+              <td>
               <a href="@routes.HomeController.updateProduct(p.getId)" class="button xs btn-danger">
                 <span class="glyphicon glyphicon-pencil"></span>
               </a>
@@ -53,6 +57,7 @@
                 <span class="glyphicon glyphicon-trash"></span>
               </a>
             </td>
+          }
           </tr>
         }
       </tbody>
