@@ -4,7 +4,7 @@
 		module="playlabs2017-lab11-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171215150537"
+		publication="20180314201944"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>
